@@ -13,7 +13,7 @@ type FormState = {
 
 const GMAIL_TO = "friend@gmail.com"; // <- change this
 
-export default function Page(): JSX.Element {
+export default function Page(): React.JSX.Element {
   const [form, setForm] = React.useState<FormState>({
     name: "",
     email: "",
