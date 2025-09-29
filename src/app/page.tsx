@@ -75,8 +75,9 @@ export default function Page() {
       } catch {
         // ignore confetti errors
       }
-    } catch (err: any) {
-      setError(err?.message || "Something went wrong.");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Something went wrong.";
+      setError(message);
     } finally {
       setSending(false);
     }
